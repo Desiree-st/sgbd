@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votre Panier - KAYKAY BOUTIQUE</title>
+    <link rel="stylesheet" href="../css/SOURCE.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-blue: #000033;
+            --light-grey: #F2F2F2;
+            --border-color: #E5E5E5;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--dark-blue);
+            background: linear-gradient(135deg, #4f4a98, #bd3fa0)
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+            background: #fff;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        /* Panier Section */
+        .cart-container {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .cart-header {
+            border-bottom: 2px solid var(--dark-blue);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .cart-header h1 {
+            font-size: 2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        /* Table de produits */
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .cart-table th {
+            text-align: left;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: white;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .cart-item {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .cart-item td {
+            padding: 25px 0;
+            vertical-align: center;
+        }
+
+        .product-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .product-img {
+            width: 80px;
+            height: 80px;
+            background: var(--light-grey);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-img img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+        }
+
+        .product-details h3 {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .product-details p {
+            margin: 5px 0 0;
+            font-size: 0.8rem;
+            color: white;
+        }
+
+        /* Quantité & Prix */
+        .qty-input {
+            width: 50px;
+            padding: 8px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .price {
+            font-weight: 900;
+        }
+
+        .remove-btn {
+            background: none;
+            border: none;
+            color: white;
+            text-decoration: underline;
+            font-size: 0.7rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            padding: 0;
+        }
+
+        /* Résumé de commande */
+        .cart-summary {
+            margin-top: 40px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .summary-box {
+            width: 300px;
+            background: var(--light-grey);
+            padding: 30px;
+        }
+
+        .summary-line {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .summary-total {
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+            margin-top: 15px;
+            font-weight: 900;
+            font-size: 1.2rem;
+        }
+
+        .btn-checkout {
+            width: 100%;
+            background: var(--dark-blue);
+            color: white;
+            border: none;
+            padding: 18px;
+            font-weight: 900;
+            text-transform: uppercase;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .btn-checkout:hover {
+            opacity: 0.9;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px;
+            background: #f8f9fa;
+            margin-top: 80px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><img src="../image/téléchargé (1).jpg" height="80" alt="Logo"></div>
+        <nav>
+            <ul>
+                <li><a href="Routine.html">Routine</a></li>
+                <li><a href="Soin.html">Soins</a></li>
+                <li><a href="maquillage.html">Maquillage</a></li>
+                <li><a href="parfum.html">Parfum</a></li>
+                <li><a href="formulaire.php">Formulaire</a></li>
+                <li><a href="panier.php">Panier</a></li>
+                <li><a href="compte.php">Compte</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="cart-container">
+        <div class="cart-header">
+            <h1>Mon Panier</h1>
+            <span>(2 articles)</span>
+        </div>
+
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th>Quantité</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="cart-item">
+                    <td>
+                        <div class="product-info">
+                            <div class="product-img">
+                                <img src="../image/images (1).jpg" alt="Nettoyant">
+                            </div>
+                            <div class="product-details">
+                                <h3>Nettoyant Purifiant</h3>
+                                <p>Taille: 250ML</p>
+                                <button class="remove-btn">Supprimer</button>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <input type="number" class="qty-input" value="1" min="1">
+                    </td>
+                    <td class="price">14,00 €</td>
+                </tr>
+
+                <tr class="cart-item">
+                    <td>
+                        <div class="product-info">
+                            <div class="product-img">
+                                <img src="../image/huile.webp" alt="Huile">
+                            </div>
+                            <div class="product-details">
+                                <h3>Huile Précieuse</h3>
+                                <p>Taille: 50ML</p>
+                                <button class="remove-btn">Supprimer</button>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <input type="number" class="qty-input" value="1" min="1">
+                    </td>
+                    <td class="price">34,90 €</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="cart-summary">
+            <div class="summary-box">
+                <div class="summary-line">
+                    <span>Sous-total</span>
+                    <span>48,90 €</span>
+                </div>
+                <div class="summary-line">
+                    <span>Livraison</span>
+                    <span>Offerte</span>
+                </div>
+                <div class="summary-total">
+                    <span>TOTAL</span>
+                    <span>48,90 €</span>
+                </div>
+                <button class="btn-checkout">Commander</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 KAYKAY BOUTIQUE. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>

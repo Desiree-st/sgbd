@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnostic & Contact - KAYKAY BOUTIQUE</title>
+    <link rel="stylesheet" href="../css/SOURCE.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-blue: #000033;
+            --light-grey: #F2F2F2;
+            --border-color: #E5E5E5;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--dark-blue);
+            background: linear-gradient(135deg, #4f4a98, #bd3fa0)
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+            background: #fff;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        /* Container Formulaire */
+        .form-container {
+            max-width: 600px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .form-header h1 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        /* Style des champs */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        label {
+            font-size: 0.75rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--dark-blue);
+        }
+
+        /* Style Radio/Checkbox personnalisés */
+        .radio-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .radio-option {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        /* Bouton Envoyer */
+        .btn-submit {
+            background: var(--dark-blue);
+            color: white;
+            border: none;
+            padding: 20px;
+            font-weight: 900;
+            text-transform: uppercase;
+            cursor: pointer;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+
+        .btn-submit:hover {
+            background: #000055;
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px;
+            background: #f8f9fa;
+            margin-top: 80px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><img src="../image/téléchargé (1).jpg" height="80" alt="Logo"></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="Routine.html">Routine</a></li>
+                <li><a href="Soin.html">Soins</a></li>
+                <li><a href="maquillage.html">Maquillage</a></li>
+                <li><a href="parfum.html">Parfum</a></li>
+                <li><a href="formulaire.php">Formulaire</a></li>
+                <li><a href="panier.php">Panier</a></li>
+                <li><a href="compte.php">Compte</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="form-container">
+        <div class="form-header">
+            <h1>Votre Diagnostic</h1>
+            <p>Dites-nous en plus sur votre peau, nous créerons votre routine sur-mesure.</p>
+        </div>
+
+        <form action="traitement.php" method="POST">
+            <div class="form-group">
+                <label for="nom">Nom Complet</label>
+                <input type="text" id="nom" name="nom" placeholder="Ex: Jean Dupont" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Adresse Email</label>
+                <input type="email" id="email" name="email" placeholder="jean@exemple.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="skin-type">Votre type de peau</label>
+                <select id="skin-type" name="skin-type">
+                    <option value="normale">Peau Normale</option>
+                    <option value="seche">Peau Sèche</option>
+                    <option value="mixte">Peau Mixte à Grasse</option>
+                    <option value="sensible">Peau Sensible / Réactive</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Votre objectif principal</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="goal" value="hydrater" checked> Hydratation
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="goal" value="purifier"> Anti-imperfections
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="goal" value="eclat"> Éclat du teint
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="goal" value="antiage"> Anti-âge
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Des précisions sur vos besoins ?</label>
+                <textarea id="message" name="message" rows="5" placeholder="Parlez-nous de votre routine actuelle..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Envoyer mon profil</button>
+        </form>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 KAYKAY BOUTIQUE. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,263 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: aliceblue;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: white;
+    background: linear-gradient(135deg, #4f4a98, #bd3fa0);
+}
+
+
+
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+
+header nav ul li {
+    margin: 0 20px;
+}
+
+
+header nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%; 
+    }
+}
+
+
+.banniere {
+    height: 800px;
+    background-image: url(../image/portrait.avif);
+    background-size: 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    padding: 100px 30px;
+    animation: moveBackground 10s linear infinite;
+    text-align: center;
+    
+}
+
+
+@keyframes changecolor {
+    50% {
+        color: rgb(240, 169, 169);
+    }
+    50% {
+        color: rgb(246, 173, 214);
+    }
+    
+}
+
+
+.banniere h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    animation: changecolor 2s infinite;
+}
+
+.banniere .cta-button {
+    text-decoration: none;
+    color: black;
+    background-color: coral;
+}
+.card {
+    background: linear-gradient(135deg, #4f4a98, #bd3fa0); /* Dégradé violet et bleu */
+    border: none; /* Supprime la bordure */
+    border-radius: 15px; /* Coins arrondis plus prononcés */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre plus marquée */
+    width: 300px; /* Largeur fixe pour une présentation uniforme */
+    text-align: center; /* Centre le contenu */
+    padding: 20px; /* Espacement interne */
+    color: #fff; /* Texte blanc pour un bon contraste */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation au survol */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Agrandit légèrement la carte au survol */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Accentue l'ombre au survol */
+}
+
+/* Style des images dans les cartes */
+.card-image {
+    border-radius: 10px; /* Arrondit les coins des images */
+    width: 100%; /* Adapte l'image à la largeur de la carte */
+    height: auto; /* Maintient les proportions */
+    margin-bottom: 15px; /* Espace entre l'image et le titre */
+}
+
+/* Titre des cartes avec lien */
+.card-title a {
+    font-size: 1.8em; /* Taille plus grande pour le titre */
+    margin: 15px 0 10px; /* Espace autour du titre */
+    color: #ffdd57; /* Couleur jaune lumineuse pour le lien */
+    text-decoration: none; /* Supprime le soulignement */
+    font-weight: bold; /* Met le titre en gras */
+    transition: color 0.3s ease; /* Animation pour le changement de couleur */
+}
+
+.card-title a:hover {
+    color: #fff; /* Change la couleur du lien en blanc au survol */
+}
+
+/* Description des cartes */
+.card-description {
+    font-size: 1em; /* Taille normale pour le texte */
+    color: #e0e0e0; /* Gris clair pour un bon contraste */
+    line-height: 1.6; /* Espace entre les lignes pour une meilleure lisibilité */
+    margin-top: 10px; /* Espace au-dessus de la description */
+}
+.partie1 {
+    display: flex; /* Aligne les éléments horizontalement */
+    justify-content: space-between; /* Répartit l'espace entre les éléments */
+    padding: 70px; /* Espacement interne */
+    gap: 20px; /* Ajoute un espace entre les cartes */
+}
+.rating-count {
+    font-size: 0.75rem;
+    color: #666;
+}
+
+.product-price {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.price {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #000;
+}
+
+.original-price {
+    font-size: 0.875rem;
+    color: #999;
+    text-decoration: line-through;
+}
+/* Deuxième partie de la présentation des filières */
+.partie2 {
+    display: flex; /* Aligne les éléments horizontalement */
+    justify-content: space-between; /* Répartit l'espace entre les éléments */
+    padding: 100px; /* Espacement interne */
+    gap: 20px; /* Ajoute un espace entre les cartes */
+}
+.partie1, .partie2 {
+    max-width: 1200px; /* Largeur maximale de la section */
+    margin: 0 auto; /* Centre la section horizontalement */
+}
+
+/* Transition harmonieuse pour les éléments interactifs */
+.card:hover .card-title a {
+    color: #00ffcc; /* Change la couleur du titre au survol de la carte */
+}
+/* Section Avantages */
+.features {
+    background: #f9fafb;
+    padding: 4rem 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature {
+    text-align: center;
+}
+
+.feature-icon {
+    width: 4rem;
+    height: 4rem;
+    background: #000;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 1rem;
+}
+
+.feature h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.feature p {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+/* Pied de page */
+.footer {
+    background: linear-gradient(135deg, #4f4a98, #bd3fa0);
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid #e5e7eb;
+}
+
+.footer p {
+    color: #0d0707;
+    font-size: 0.875rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-desktop {
+        display: none;
+    }
+    
+    .search-box {
+        display: none;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-text {
+        font-size: 1rem;
+    }
+    
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+    
+    .product-image img {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+}

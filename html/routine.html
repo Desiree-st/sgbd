@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Routine Skincare - KAYKAY BOUTIQUE</title>
+    <link rel="stylesheet" href="../css/SOURCE.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-blue: #000033;
+            --light-grey: #F2F2F2;
+            --border-color: #E5E5E5;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--dark-blue);
+            background: linear-gradient(135deg, #4f4a98, #bd3fa0)
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+            background: #fff;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        /* Section Routine */
+        .routine-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .routine-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .routine-header h1 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .routine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px 30px;
+        }
+
+        /* Carte Produit */
+        .product-card {
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 25px;
+        }
+
+        /* --- MODIFICATION ICI POUR L'ALIGNEMENT DES IMAGES --- */
+        .image-bg {
+            background-color: var(--light-grey);
+            height: 350px; /* On fixe la hauteur pour que toutes les cartes soient alignées */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* L'image garde ses proportions sans être coupée */
+            padding: 20px; /* Espace pour que l'image ne touche pas les bords du gris */
+        }
+        /* ---------------------------------------------------- */
+
+        .step-tag {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: var(--dark-blue);
+            color: white;
+            padding: 6px 12px;
+            font-weight: 900;
+            font-size: 0.75rem;
+            z-index: 2;
+        }
+
+        .skin-type {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .product-name {
+            font-size: 1.3rem;
+            font-weight: 900;
+            margin: 0 0 10px 0;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        .product-desc {
+            font-size: 0.9rem;
+            color:  white;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            min-height: 40px;
+        }
+
+        .size-selector {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 20px;
+        }
+
+        .size-btn {
+            border: 1px solid var(--dark-blue);
+            background: white;
+            padding: 5px 12px;
+            font-size: 0.75rem;
+            font-weight: 900;
+            cursor: pointer;
+        }
+
+        .size-btn.active {
+            background: var(--dark-blue);
+            color: white;
+        }
+
+        .btn-add {
+            border: 1px solid var(--dark-blue);
+            background: transparent;
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            font-weight: 900;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-add:hover {
+            background: var(--dark-blue);
+            color: white;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px;
+            background: #f8f9fa;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><img src="../image/téléchargé (1).jpg" height="80" alt="Logo"></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="Routine.html">Routine</a></li>
+                <li><a href="Soin.html">Soins</a></li>
+                <li><a href="maquillage.html">Maquillage</a></li>
+                <li><a href="parfum.html">Parfum</a></li>
+                <li><a href="formulaire.html">Formulaire</a></li>
+                <li><a href="panier.php">Panier</a></li>
+                <li><a href="compte.php">Compte</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="routine-container">
+        <div class="routine-header">
+            <h1>La Routine Idéale</h1>
+            <p>Une sélection pointue pour chaque étape de votre soin visage.</p>
+        </div>
+
+        <div class="routine-grid">
+
+            <div class="product-card">
+                <div class="image-bg">
+                    <span class="step-tag">01. NETTOYER</span>
+                    <img src="../image/im.avif" alt="Nettoyant">
+                </div>
+                <div class="skin-type">Tous types de peaux</div>
+                <h3 class="product-name">Nettoyant Purifiant</h3>
+                <p class="product-desc">Élimine les impuretés et l'excès de sébum sans dessécher.</p>
+                <div class="size-selector">
+                    <button class="size-btn active">250ML</button>
+                    <button class="size-btn">500ML</button>
+                </div>
+                <button class="btn-add">
+                    <span>AJOUTER</span>
+                    <span>14,00 €</span>
+                </button>
+            </div>
+
+            <div class="product-card">
+                <div class="image-bg">
+                    <span class="step-tag">02. TRAITER</span>
+                    <img src="../image/images (1).jpg" alt="Sérum">
+                </div>
+                <div class="skin-type">Teint terne</div>
+                <h3 class="product-name">Sérum Vitamine C</h3>
+                <p class="product-desc">Illumine et unifie le teint pour une peau éclatante.</p>
+                <div class="size-selector">
+                    <button class="size-btn active">30ML</button>
+                </div>
+                <button class="btn-add">
+                    <span>AJOUTER</span>
+                    <span>12,00 €</span>
+                </button>
+            </div>
+
+            <div class="product-card">
+                <div class="image-bg">
+                    <span class="step-tag">03. HYDRATER</span>
+                    <img src="../image/huile.webp" alt="Huile">
+                </div>
+                <div class="skin-type">Peaux sèches</div>
+                <h3 class="product-name">Huile Précieuse</h3>
+                <p class="product-desc">Nourrit intensément et apporte un fini soyeux.</p>
+                <div class="size-selector">
+                    <button class="size-btn active">50ML</button>
+                </div>
+                <button class="btn-add">
+                    <span>AJOUTER</span>
+                    <span>10,00 €</span>
+                </button>
+            </div>
+
+            <div class="product-card">
+                <div class="image-bg">
+                    <span class="step-tag">04. APAISER</span>
+                    <img src="../image/coffret.jpeg" alt="Masque">
+                </div>
+                <div class="skin-type">Tous types de peaux</div>
+                <h3 class="product-name">Crème booster</h3>
+                <p class="product-desc">Un boost d'hydratation hebdomadaire pour votre visage.</p>
+                <div class="size-selector">
+                    <button class="size-btn active">75ML</button>
+                </div>
+                <button class="btn-add">
+                    <span>AJOUTER</span>
+                    <span>19,00 €</span>
+                </button>
+            </div>
+
+               <div class="product-card">
+                <div class="image-bg">
+                    <span class="step-tag">05. Anti-imperfection</span>
+                    <img src="../image/yve.webp" alt="Masque">
+                </div>
+                <div class="skin-type">Peaux mixtes</div>
+                <h3 class="product-name">Gamme Anti-imperfection</h3>
+                <p class="product-desc">Nettoyant au Charbon Actif : Pour désincruster les pores en profondeur.</p>
+                <div class="size-selector">
+                    <button class="size-btn active">75ML</button>
+                </div>
+                <button class="btn-add">
+                    <span>AJOUTER</span>
+                    <span>12,50 €</span>
+                </button>
+            </div>
+
+                 <div class="product-card">
+                <div class="image-bg">
+                    <span class="step-tag">06.Masques Réparateur </span>
+                    <img src="../image/OIP.webp" alt="Masque">
+                </div>
+                <div class="skin-type">Tous types de peaux</div>
+                <h3 class="product-name">Masque Régénérant</h3>
+                <p class="product-desc">Un masque réparateur pour une peau lisse et éclatante</p>
+                <div class="size-selector">
+                    <button class="size-btn active">75ML</button>
+                </div>
+                <button class="btn-add">
+                    <span>AJOUTER</span>
+                    <span>19,00 €</span>
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 DK BOUTIQUE. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>

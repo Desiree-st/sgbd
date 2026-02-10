@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soins Corps - KAYKAY BOUTIQUE</title>
+    <link rel="stylesheet" href="../css/SOURCE.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-blue: #000033;
+            --light-grey: #F2F2F2;
+            --border-color: #E5E5E5;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--dark-blue);
+            background: linear-gradient(135deg, #4f4a98, #bd3fa0)
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+            background: #fff;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        .routine-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .routine-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .routine-header h1 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .routine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px 30px;
+        }
+
+        .product-card {
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 25px;
+        }
+
+        .image-bg {
+            background-color: var(--light-grey);
+            height: 350px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; 
+            padding: 25px;
+        }
+
+        .step-tag {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: var(--dark-blue);
+            color: white;
+            padding: 6px 12px;
+            font-weight: 900;
+            font-size: 0.75rem;
+            z-index: 2;
+        }
+
+        .skin-type {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .product-name {
+            font-size: 1.3rem;
+            font-weight: 900;
+            margin: 0 0 10px 0;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        .product-desc {
+            font-size: 0.9rem;
+            color:  white;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            min-height: 40px;
+        }
+
+        .size-selector {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 20px;
+        }
+
+        .size-btn {
+            border: 1px solid var(--dark-blue);
+            background: white;
+            padding: 5px 12px;
+            font-size: 0.75rem;
+            font-weight: 900;
+            cursor: pointer;
+        }
+
+        .size-btn.active {
+            background: var(--dark-blue);
+            color: white;
+        }
+
+        .btn-add {
+            border: 1px solid var(--dark-blue);
+            background: transparent;
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            font-weight: 900;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-add:hover {
+            background: var(--dark-blue);
+            color: white;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px;
+            background: #f8f9fa;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><img src="../image/téléchargé (1).jpg" height="80" alt="Logo"></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="Routine.html">Routine</a></li>
+                <li><a href="Soin.html">Soins</a></li>
+                <li><a href="maquillage.html">Maquillage</a></li>
+                <li><a href="parfum.html">Parfum</a></li>
+                <li><a href="formulaire.html">Formulaire</a></li>
+                <li><a href="panier.php">Panier</a></li>
+                <li><a href="compte.php">Compte</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="routine-container">
+        <div class="routine-header">
+            <h1>Soins du Corps & Bien-être</h1>
+            <p>Une collection sensorielle pour magnifier chaque centimètre de votre peau.</p>
+        </div>
+
+        <div class="routine-grid">
+
+            <div class="product-card">
+                <div class="image-bg">
+                    <span class="step-tag">EXFOLIER</span>
+                    <img src="../image/téléchargé (2).jpg" alt="Gommage">
+                </div>
+                <div class="skin-type">Sels de la Mer Morte & Eucalyptus</div>
+                <h3 class="product-name">Cristaux de Pureté Corps</h3>
+                <p class="product-desc">Un gommage revigorant qui élimine les cellules mortes pour une peau d'une douceur infinie.</p>
+                <div class="size-selector">
+                    <button class="size-btn active">200ML</button>
+                </div>
+                <button class="btn-add">
+                    <span>AJOUTER</span>
+                    <span>28,00 €</span>
+                </button>
+            </div>
+
+            <div class="product-card">
+                <div class="image-bg">
+                    <span class="step-tag">HYDRATER</span>
+                    <img src="../image/bain.jpg" alt="Lait Corps">
+                </div>
+                <div class="skin-type">Lait d'Amande & Miel Blanc</div>
+                <h3 class="product-name">Voile de Soie Hydratant</h3>
+                <p class="product-desc">Une texture légère qui pénètre instantanément pour hydrater et parfumer délicatement.</p>
+                <div class="size-selector">
+                    <button class="size-btn active">250ML</button>
+                    <button class="size-btn">500ML</button>
+                </div>
+                <button class="btn-add">
+                    <span>AJOUTER</span>
+                    <span>32,00 €</span>
+                </button>
+            </div>
+
+            <div class="product-card">
+                <div class="image-bg">
+                    <span class="step-tag">NOURRIR</span>
+                    <img src="../image/baume.webp" alt="Beurre">
+                </div>
+                <div class="skin-type">Karité Pur & Beurre de Cacao</div>
+                <h3 class="product-name">Baume Impérial Nutrition</h3>
+                <p class="product-desc">Le soin ultime pour les peaux très sèches. Répare et protège contre le froid et le vent.</p>
+                <div class="size-selector">
+                    <button class="size-btn active">150ML</button>
+                </div>
+                <button class="btn-add">
+                    <span>AJOUTER</span>
+                    <span>36,00 €</span>
+                </button>
+            </div>
+
+            <div class="product-card">
+                <div class="image-bg">
+                    <span class="step-tag">DÉTENDRE</span>
+                    <img src="../image/bs.webp" alt="Bain">
+                </div>
+                <div class="skin-type">Lavande Fine & Or Noir</div>
+                <h3 class="product-name">Essence de Bain Relaxante</h3>
+                <p class="product-desc">Transformez votre bain en un rituel de sérénité absolue. Apaise l'esprit et le corps.</p>
+                <div class="size-selector">
+                    <button class="size-btn active">100ML</button>
+                </div>
+                <button class="btn-add">
+                    <span>AJOUTER</span>
+                    <span>42,00 €</span>
+                </button>
+            </div>
+
+            <div class="product-card">
+                <div class="image-bg">
+                    <span class="step-tag">PROTÉGER</span>
+                    <img src="../image/shopping.webp" alt="Mains">
+                </div>
+                <div class="skin-type">Cire d'Abeille & Citron d'Italie</div>
+                <h3 class="product-name">Soin des Mains Majuscule</h3>
+                <p class="product-desc">Fortifie les ongles et adoucit les mains sans laisser de fini collant.</p>
+                <div class="size-selector">
+                    <button class="size-btn active">50ML</button>
+                </div>
+                <button class="btn-add">
+                    <span>AJOUTER</span>
+                    <span>23,70€</span>
+                </button>
+            </div>
+
+            <div class="product-card">
+                <div class="image-bg">
+                    <span class="step-tag">NETTOYER</span>
+                    <img src="../image/ca.webp" alt="Gel Douche">
+                </div>
+                <div class="skin-type">Ambre Gris & Santal</div>
+                <h3 class="product-name">Nectar de Douche Précieux</h3>
+                <p class="product-desc">Une mousse riche et onctueuse pour un nettoyage haute couture quotidien.</p>
+                <div class="size-selector">
+                    <button class="size-btn active">250ML</button>
+                </div>
+                <button class="btn-add">
+                    <span>AJOUTER</span>
+                    <span>3€</span>
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 KAYKAY BOUTIQUE. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
