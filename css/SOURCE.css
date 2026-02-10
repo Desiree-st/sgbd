@@ -82,8 +82,9 @@ header nav ul li a {
 
 .banniere .cta-button {
     text-decoration: none;
-    color: black;
-    background-color: coral;
+    color: white;
+    width: 15px;
+   
 }
 .card {
     background: linear-gradient(135deg, #4f4a98, #bd3fa0); /* Dégradé violet et bleu */
